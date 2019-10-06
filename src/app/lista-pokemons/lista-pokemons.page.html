@@ -1,0 +1,194 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Lista-pokemons</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar color="warning">
+      <ion-searchbar color="light"placeholder="Filter Schedules"></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    
+        <ion-item *ngFor="let itemDaLista of listaPokemons" style="text-align: center">
+          <ion-item lines="full" [routerLink]="itemDaLista.pagina">
+            <ion-chip [color]="itemDaLista.cor"> {{itemDaLista.numero}}</ion-chip>
+            <span>{{itemDaLista.nome}}</span>
+            <ion-badge class="lado" [color]="itemDaLista.cor"> {{itemDaLista.tipo}}</ion-badge>
+            <ion-thumbnail ><ion-img [src]="itemDaLista.img"></ion-img></ion-thumbnail> 
+          </ion-item>    
+        </ion-item>
+     
+        
+  <!-- Codigo Burro
+    
+     <ion-list>
+
+    <ion-item-sliding>
+      
+      <ion-item routerLink="/bulbasaur">
+
+        
+        <ion-chip slot="start" color="success">
+          <ion-label>001</ion-label>
+        </ion-chip>
+
+        
+        <ion-label>
+          <h2>Bulbasaur</h2>
+          <ion-badge color="success">Grass</ion-badge> &nbsp;
+          <ion-badge color="tertiary">Poison</ion-badge>
+        </ion-label>
+
+        
+        <ion-avatar slot="end">
+          <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png">
+        </ion-avatar>
+      </ion-item>
+
+      
+      <ion-item-options side="end">
+        <ion-item-option color="primary">
+          <h1>
+          <ion-icon name="star"></ion-icon>
+          </h1>
+        </ion-item-option>
+        <ion-item-option color="danger">
+          <h1>
+          <ion-icon name="share"></ion-icon>
+          </h1>
+        </ion-item-option>
+      </ion-item-options>
+
+
+    </ion-item-sliding>
+
+
+    <ion-item routerLink="/charmander">
+      <ion-chip slot="start" color="danger">
+        <ion-label>004</ion-label>
+      </ion-chip>
+      <ion-label text-wrap>
+        <h2>Charmander</h2>
+        <ion-badge color="danger">Fire</ion-badge> &nbsp;
+      </ion-label>
+      <ion-avatar slot="end">
+        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png">
+      </ion-avatar>
+    </ion-item>
+
+  <ion-item routerLink="/squirtle">
+    <ion-chip slot="start" color="primary">
+      <ion-label>007</ion-label>
+    </ion-chip>
+    <ion-label text-wrap>
+      <h2>Squirtle</h2>
+      <ion-badge color="primary">Water</ion-badge>
+    </ion-label>
+    <ion-avatar slot="end">
+      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png">
+    </ion-avatar>
+  </ion-item>
+
+  <ion-item routerLink="/pikachu">
+    <ion-chip slot="start" color="warning">
+      <ion-label>025</ion-label>
+    </ion-chip>
+    <ion-label text-wrap>
+      <h2>Pikachu</h2>
+      <ion-badge color="warning">Eletric</ion-badge> &nbsp;
+    </ion-label>
+    <ion-avatar slot="end">
+      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/025.png">
+    </ion-avatar>
+  </ion-item>
+
+  <ion-item routerLink="/gengar">
+    <ion-chip slot="start" color="tertiary">
+      <ion-label>094</ion-label>
+    </ion-chip>
+    <ion-label text-wrap>
+      <h2>Gengar</h2>
+      <ion-badge color="tertiary">Ghost</ion-badge> &nbsp;
+      <ion-badge color="tertiary">Poison</ion-badge>
+    </ion-label>
+    <ion-avatar slot="end">
+      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/094.png">
+    </ion-avatar>
+  </ion-item>
+
+  <ion-item routerLink="/articuno">
+    <ion-chip slot="start" color="secondary">
+      <ion-label>144</ion-label>
+    </ion-chip>
+    <ion-label text-wrap>
+      <h2>Articuno</h2>
+      <ion-badge color="secondary">Ice</ion-badge> &nbsp;
+      <ion-badge color="primary">Flying</ion-badge>
+    </ion-label>
+    <ion-avatar slot="end">
+      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/144.png">
+    </ion-avatar>
+  </ion-item>
+
+  <ion-item routerLink="/zapdos">
+    <ion-chip slot="start" color="warning">
+      <ion-label>145</ion-label>
+    </ion-chip>
+    <ion-label text-wrap>
+      <h2>Zapdos</h2>
+      <ion-badge color="warning">Eletric</ion-badge> &nbsp;
+      <ion-badge color="primary">Flying</ion-badge>
+    </ion-label>
+    <ion-avatar slot="end">
+      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/145.png">
+    </ion-avatar>
+  </ion-item>
+
+  <ion-item routerLink="/moltres">
+    <ion-chip slot="start" color="danger">
+      <ion-label>146</ion-label>
+    </ion-chip>
+    <ion-label text-wrap>
+      <h2>Moltres</h2>
+      <ion-badge color="danger">Fire</ion-badge> &nbsp;
+      <ion-badge color="primary">Flying</ion-badge>
+    </ion-label>
+    <ion-avatar slot="end">
+      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/146.png">
+    </ion-avatar>
+  </ion-item>
+
+  <ion-item routerLink="/chikorita">
+    <ion-chip slot="start" color="success">
+      <ion-label>152</ion-label>
+    </ion-chip>
+    <ion-label text-wrap>
+      <h2>Chikorita</h2>
+      <ion-badge color="success">Grass</ion-badge> &nbsp;
+    </ion-label>
+    <ion-avatar slot="end">
+      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/152.png">
+    </ion-avatar>
+  </ion-item>
+
+  <ion-item routerLink="/umbreon">
+    <ion-chip slot="start" color="dark">
+      <ion-label>197</ion-label>
+    </ion-chip>
+    <ion-label text-wrap>
+      <h2>Umbreon</h2>
+      <ion-badge color="dark">Dark</ion-badge> &nbsp;
+    </ion-label>
+    <ion-avatar slot="end">
+      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/197.png">
+    </ion-avatar>
+  </ion-item>
+
+  </ion-list>
+ -->
+
+</ion-content>
